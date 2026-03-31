@@ -1,5 +1,4 @@
 name: Run Postman API Tests
-
 on:
   push:
     branches: [ main ]
@@ -9,15 +8,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
 
       - name: Install Newman
         run: npm install -g newman newman-reporter-htmlextra
@@ -25,7 +23,6 @@ jobs:
       - name: Run Postman collection
         run: |
           newman run collection.json \
-            -e environment.json \
             --reporters cli,htmlextra \
             --reporter-htmlextra-export results/report.html
 
