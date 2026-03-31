@@ -1,3 +1,4 @@
+![Postman Test Status](https://github.com/snehasaraf21/API_Postman_project/actions/workflows/postman.yml/badge.svg)
 # Restful Booker API Testing Project
 
 This project contains API testing for the **Restful Booker API**, focusing on validating authentication, booking creation, retrieval, update, partial update, and deletion functionality using Postman.
